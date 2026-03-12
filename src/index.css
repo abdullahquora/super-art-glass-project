@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #FFF8F2;
+  --saffron: #FF7A00;
+  --saffron-light: #F4A261;
+  --saffron-soft: #FFE5B4;
+  --saffron-pale: #FFF3E8;
+  --text-dark: #1C1C1C;
+  --text-muted: #6B6B6B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFF3E8; }
+::-webkit-scrollbar-thumb { background: rgba(255,122,0,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,122,0,0.7); }
+
+@layer components {
+  /* White glass panel with saffron tint */
+  .glass-panel {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(244,162,97,0.25);
+    border-radius: 16px;
+  }
+
+  /* Saffron-tinted glass panel */
+  .glass-panel-blue {
+    background: rgba(255,250,245,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,122,0,0.2);
+    border-radius: 16px;
+  }
+
+  /* Saffron gradient button */
+  .glass-btn {
+    background: linear-gradient(135deg, #FF7A00, #F4A261);
+    border: 1px solid rgba(255,122,0,0.3);
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .glass-btn:hover {
+    background: linear-gradient(135deg, #e06d00, #e8935a);
+    box-shadow: 0 0 28px rgba(255,122,0,0.4);
+    transform: translateY(-1px);
+  }
+
+  /* Saffron text gradient */
+  .text-gradient {
+    background: linear-gradient(135deg, #CC5F00 0%, #FF7A00 50%, #F4A261 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Lighter saffron gradient */
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #FF7A00 0%, #F4A261 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* Light-theme form input */
+  .input-glass {
+    background: rgba(255,255,255,0.9);
+    border: 1.5px solid rgba(244,162,97,0.35);
+    border-radius: 10px;
+    color: #1C1C1C;
+    padding: 12px 16px;
+    width: 100%;
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .input-glass::placeholder { color: rgba(28,28,28,0.35); }
+
+  .input-glass:focus {
+    border-color: rgba(255,122,0,0.6);
+    background: rgba(255,248,242,0.95);
+    box-shadow: 0 0 0 3px rgba(255,122,0,0.12), 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  /* Saffron badge / pill */
+  .saffron-badge {
+    background: rgba(255,122,0,0.1);
+    border: 1px solid rgba(255,122,0,0.25);
+    color: #CC5F00;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Section divider */
+  .saffron-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,122,0,0.4), transparent);
+  }
+}
