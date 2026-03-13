@@ -21,10 +21,10 @@ export default function Hero() {
         }} />
 
       {/* Main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pt-28 pb-20 sm:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 pt-24 pb-16 sm:pt-28 sm:pb-20 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center">
 
         {/* LEFT: Text content */}
-        <div className="order-2 lg:order-1">
+        <div>
           {/* Location badge with Ayodhya logo */}
           <div
             className="inline-flex items-center gap-2 mb-6 sm:mb-8"
@@ -59,7 +59,7 @@ export default function Hero() {
           </p>
 
           {/* Service pills */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
             {['UPVC Windows', 'Toughened Glass', 'ACP Cladding', 'HPL Cladding', 'Glass Facades'].map(s => (
               <span key={s} className="text-xs font-inter px-3.5 py-1.5 rounded-full transition-colors duration-200 hover:bg-[rgba(255,122,0,0.15)] cursor-default"
                 style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,122,0,0.2)', color: '#CC5F00' }}>
@@ -69,7 +69,7 @@ export default function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
             <Link to="/projects">
               <button
                 className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-inter font-semibold text-white text-sm tracking-wide transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_12px_32px_rgba(255,122,0,0.4)] active:translate-y-0 w-full sm:w-auto"
@@ -87,6 +87,19 @@ export default function Hero() {
             </button>
           </div>
 
+          {/* Mobile stats */}
+          <div className="flex gap-6 lg:hidden mb-8">
+            <div className="text-center">
+              <div className="font-playfair text-2xl font-bold text-gradient-blue">15+</div>
+              <div className="text-[10px] font-inter font-medium" style={{ color: '#888' }}>Years Experience</div>
+            </div>
+            <div className="w-px bg-orange-200" />
+            <div className="text-center">
+              <div className="font-playfair text-2xl font-bold text-gradient-blue">500+</div>
+              <div className="text-[10px] font-inter font-medium" style={{ color: '#888' }}>Projects Done</div>
+            </div>
+          </div>
+
           {/* Quick contact */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-6" style={{ borderTop: '1px solid rgba(255,122,0,0.12)' }}>
             <span className="text-[10px] font-inter font-semibold uppercase tracking-widest" style={{ color: '#b0b0b0' }}>Contact</span>
@@ -102,8 +115,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* RIGHT: Company Logo + Stats */}
-        <div className="flex flex-col items-center order-1 lg:order-2">
+        {/* RIGHT: Company Logo + Stats — hidden on mobile */}
+        <div className="hidden lg:flex flex-col items-center">
           <div className="relative">
             {/* Decorative ring */}
             <div className="absolute inset-[-20px] rounded-full pointer-events-none"
@@ -149,18 +162,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Mobile stats — visible only on small screens */}
-          <div className="flex gap-6 mt-8 sm:hidden">
-            <div className="text-center">
-              <div className="font-playfair text-2xl font-bold text-gradient-blue">15+</div>
-              <div className="text-[10px] font-inter font-medium" style={{ color: '#888' }}>Years Experience</div>
-            </div>
-            <div className="w-px bg-orange-200" />
-            <div className="text-center">
-              <div className="font-playfair text-2xl font-bold text-gradient-blue">500+</div>
-              <div className="text-[10px] font-inter font-medium" style={{ color: '#888' }}>Projects Done</div>
-            </div>
-          </div>
         </div>
       </div>
 
